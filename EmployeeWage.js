@@ -68,3 +68,17 @@ const Wage_Per_Hour = 20;
     let empWage = emp_Hrs * Wage_Per_Hour;
     console.log("UC-3  EmpWage: " + empWage + " Hours: "+ emp_Hrs);
     
+    
+   //UC-4 For Loop
+
+{
+    const NUM_WORKING_DAYS = 20;
+let totalEmpHrs = 0;
+for (let day = 0; day < NUM_WORKING_DAYS; day++);
+{
+    let empCheck = Math.floor(Math.random() * 10) %3;
+    totalEmpHrs += getWorkingHours(empCheck);
+}
+let empWage = totalEmpHrs * Wage_Per_Hour;
+console.log("UC-4 : Total Hours: " + totalEmpHrs + " EmpWage: "+ empWage);
+} 
