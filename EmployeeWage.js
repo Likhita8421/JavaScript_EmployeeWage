@@ -133,5 +133,33 @@ let EmpWage = calcDailyWage(totalEmpHrs);
 console.log("UC-6 : Total Days: " + totalWorkingDays + " Total Hrs: "+ totalEmpHrs + " Emp Wage " + EmpWage );
 
     
+//Using Array Helper Functions
+//UC 7A- CALC Total Wage Using Array "forEach method or reduce method"
+
+let totEmpWage = 0;
+function sum(dailyWage) 
+{
+    totEmpWage += dailyWage;
+}
+empDailyWageArr.forEach(sum);
+console.log("UC7A - Total Days: " + totalWorkingDays + " Total Hrs "+  totalEmpHrs + " Emp Wage " + EmpWage );
+
+//-----reduce method
+function totalWages(totalWage, dailyWage) 
+{
+    return totalWage + dailyWage;
+}
+console.log("UC7A - Emp Wage With Reduce: " + empDailyWageArr.reduce(totalWages, 0));
+
+
+
+
+
+
+
+
+
+
+
 
 
