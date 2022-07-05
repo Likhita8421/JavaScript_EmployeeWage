@@ -202,3 +202,14 @@ function totalDaysWorked(numofDays, dailyWage)
     return numofDays;
 }
 console.log("UC 7G - Number of Days Emp Worked: "+ empDailyWageArr.reduce(totalDaysWorked, 0));
+
+
+//UC-8 Map Functions
+
+console.log("UC-8A - Emp Wage Map totalHrs: " + Array.from(empDailyWageMap.values()).reduce(totalWages, 0 ));
+
+
+
+
+
+
