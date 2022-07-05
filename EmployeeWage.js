@@ -101,3 +101,37 @@ console.log("UC-4 : Total Hours: " + totalEmpHrs + " EmpWage: "+ empWage);
     let empWage = totalEmpHrs * Wage_Per_Hour;
     console.log("UC-5 : Total Days: " + totalWorkingDays + " Total hrs: "+ totalEmpHrs+ " EmpWage: "+ empWage);
 }
+
+
+//UC-6 Arrays and 7 Maps
+const MAX_HRS_IN_MONTH = 160;
+const NUM_OF_WORKIGN_DAYS =20; 
+let totalEmpHrs =0;
+let totalWorkingDays = 0;
+let empDailyWageArr = new Array();
+let empDailyWageMap = new Map();
+let empDailyHrsMap = new Map();
+
+function calcDailyWage(empHrs)
+{
+    return emp_Hrs* WAGE_PER_HOUR;
+}
+
+while (totalEmpHrs <= MAX_HRS_IN_MONTH &&
+    totalWorkingDays < NUM_OF_WORKIGN_DAYS)
+    {
+    totalWorkingDays++;
+    let empCheck = Math.floor(Math.random() * 10) % 3;
+    let emp_Hrs = getWorkingHours(empCheck);
+    totalEmpHrs += emp_Hrs;
+    empDailyWageArr.push(calcDailyWage(emp_Hrs));
+    empDailyHrsMap.set(totalWorkingDays, emp_Hrs);
+    empDailyWageMap.set(totalWorkingDays, calcDailyWage(emp_Hrs));
+    }
+
+let EmpWage = calcDailyWage(totalEmpHrs);
+console.log("UC-6 : Total Days: " + totalWorkingDays + " Total Hrs: "+ totalEmpHrs + " Emp Wage " + EmpWage );
+
+    
+
+
