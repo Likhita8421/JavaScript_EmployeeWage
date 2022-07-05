@@ -183,6 +183,3 @@ console.log("UC 7D : First time Fulltime wage was earned on Day: "+ mapDayWithWa
 
 
 
-
-
-
