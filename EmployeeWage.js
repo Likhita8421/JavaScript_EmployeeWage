@@ -210,7 +210,7 @@ console.log("UC-8A - Emp Wage Map totalHrs: " + Array.from(empDailyWageMap.value
 
 
 
-//UC-9 
+//UC-9 Emp Wage with Arrow (CHECK Full, PART & NON Working Day)
 
 const findTotal = (totalVal, dailyVal) => 
 {
@@ -237,6 +237,31 @@ console.log("Part Working Days: " + partWorkingDays);
 console.log("Non Working Days: " + nonWorkingDays);
 
 
+//UC-10 
+
+let total_EmpHrs = 0;
+let total_WorkingDays = 0;
+let empDailyHrsAndWageArr = new Array();
+while (total_EmpHrs <= MAX_HRS_IN_MONTH &&
+    total_WorkingDays < NUM_OF_WORKIGN_DAYS)
+    {
+        let empCheck = Math.floor(Math.random() * 10 ) % 3;
+        let empHrs= getWorkingHours(empCheck);
+        total_EmpHrs += empHrs;
+        empDailyHrsAndWageArr.push(
+            {
+                dayNum: total_WorkingDays,
+                dailyHours: empHrs,
+                dailyWage: calcDailyWage(empHrs),
+                toString()
+                {
+                    return '\nDay' + this.dayNum + ' ==> Working Hours is ' + this.dailyHours + ' And Wage Earned =' + this.dailyWage
+                },
+            }
+        ); 
+    }
+
+console.log("UC-10 : Showing Daily Hours Worked and Wage Earned: " + empDailyHrsAndWageArr);    
 
 
 
