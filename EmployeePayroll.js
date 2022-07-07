@@ -184,12 +184,12 @@ class EmployeePayrollData
 
         console.log("\n\n-------------------------Displaying Valid Regex-----------------------------");
         empdata.id = 2;
-        empdata.name = "Sai"; //The Regex Is Satisfying
+        empdata.name = "vani"; //The Regex Is Satisfying
         empdata.salary = 90000;
         console.log(empdata.DisplayEmpDetails());
 
         empdata.id = 5;
-        empdata.name = "bai"; //The Regex Is Not Satisfying
+        empdata.name = "bani"; //The Regex Is Not Satisfying
         empdata.salary = 80000;
         console.log(empdata.DisplayEmpDetails());
     }
@@ -198,7 +198,7 @@ class EmployeePayrollData
         console.error(ex);
     }
 }
-let empdata2 = new EmployeePayrollData(3,"Harshini",40000,'F',new Date());
-let empdata3 = new EmployeePayrollData(4, "Hardin", 40000,'F',new Date());
+let empdata2 = new EmployeePayrollData(3,"harshita",40000,'F',new Date());
+let empdata3 = new EmployeePayrollData(4, "Veera", 40000,'F',new Date());
 console.log(empdata2.DisplayEmpDetails());
 console.log(empdata3.DisplayEmpDetails());
