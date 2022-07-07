@@ -27,8 +27,11 @@ class EmployeePayrollData
     }
     set name(name) 
     { 
-        console.log("Setting: "+ name);
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');   //......UC13-regex
+        if (nameRegex.test(name))                        //...... UC13
+        //console.log("Setting: "+ name);                //.....used in uc12
         this._name = name;
+        else throw 'Name is Incorrect!';
     }
 
     //method
@@ -47,3 +50,16 @@ console.log("UC-1:"+ employeePayrollData.toString());
 //UC-2 Extend empPayroll data Add gender & StartDate
 let newEmployeePayrollData =new EmployeePayrollData(1, "Amit", 40000, "M", new Date());
 console.log("UC-2:"+ newEmployeePayrollData.toString());
+
+//UC-13-REgex Pattern & Try-Catch Error
+
+ employeePayrollData.name = "Mark";                                           //....Regex Pattern Matching 
+ console.log("Uc-3: Pattern Matching:"+ employeePayrollData.toString());
+
+try {
+    employeePayrollData.name = "mark";
+    console.log("Uc-3: TryCatch Error :"+ employeePayrollData.toString());     //...with try-catch will get else part 'Name Is Incorrect' instead of error
+}
+catch (e){
+    console.error(e);
+}

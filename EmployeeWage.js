@@ -18,62 +18,65 @@
 
 //UC-2 Switch Case
 
-const IS_PART_TIME = 1;
-const IS_FULL_TIME = 2;
-const PART_TIME_HOURS = 4;
-const FULL_TIME_HOURS = 8;
-const WAGE_PER_HOUR = 20;
-{
-    let emp_Hrs = 0;
-    let empCheck =Math.floor(Math.random() * 10) % 3;
-    switch (empCheck)
-    {
-        case IS_PART_TIME:
-            emp_Hrs = IS_PART_TIME;
-            break;
-        case IS_FULL_TIME:
-            emp_Hrs = IS_FULL_TIME;
-            break
-        default:
-            emp_Hrs = 0;        
-    }
+// const IS_PART_TIME = 1;
+// const IS_FULL_TIME = 2;
+// const PART_TIME_HOURS = 4;
+// const FULL_TIME_HOURS = 8;
+// const WAGE_PER_HOUR = 20;
+// {
+//     let emp_Hrs = 0;
+//     let empCheck =Math.floor(Math.random() * 10) % 3;
+//     switch (empCheck)
+//     {
+//         case IS_PART_TIME:
+//             emp_Hrs = IS_PART_TIME;
+//             break;
+//         case IS_FULL_TIME:
+//             emp_Hrs = IS_FULL_TIME;
+//             break
+//         default:
+//             emp_Hrs = 0;        
+//     }
 
-    let empWage = emp_Hrs * WAGE_PER_HOUR;
-    console.log("UC-2  EmpWage: " + empWage);
-}
+//     let empWage = emp_Hrs * WAGE_PER_HOUR;
+//     console.log("UC-2  EmpWage: " + empWage);
+// }
 
 
 
 //UC-3 Functions
-const PART_TIME = 1;
-const FULL_TIME = 2;
-const Part_Time_Hours = 4;
-const Full_Time_Hours = 8;
+
+const IS_PART_TIME = 1;
+const IS_FULL_TIME = 2;
+const PART_TIME_HOURS = 4;
+const FULL_TIME_HOURS = 8;
 const Wage_Per_Hour = 20;
 
-    function getWorkingHours(empCheck)
+function getWorkingHours(empCheck)
+{
+    switch(empCheck)
     {
-        switch (empCheck)
-    {
-        case PART_TIME:
-            return PART_TIME;
-        case FULL_TIME:
-            return FULL_TIME;
+        case IS_PART_TIME:
+            return IS_PART_TIME;
+        case IS_FULL_TIME:
+            return IS_FULL_TIME;
         default:
-            return 0;        
+            return 0;    
     }
-    }
-    let empCheck = Math.floor(Math.random() * 10) % 3;
-    let emp_Hrs = getWorkingHours(empCheck);
-    let empWage = emp_Hrs * Wage_Per_Hour;
-    console.log("UC-3  EmpWage: " + empWage + " Hours: "+ emp_Hrs);
+}
+    
+let empCheck = Math.floor(Math.random() * 10) % 3;
+let emp_Hrs = getWorkingHours(empCheck);
+let empWage = emp_Hrs * Wage_Per_Hour;
+console.log("UC-3  EmpWage: " + empWage + " Hours: "+ emp_Hrs);
     
     
    //UC-4 For Loop
 
 {
-    const NUM_WORKING_DAYS = 20;
+const NUM_WORKING_DAYS = 20;
 let totalEmpHrs = 0;
+    
 for (let day = 0; day < NUM_WORKING_DAYS; day++);
 {
     let empCheck = Math.floor(Math.random() * 10) %3;
@@ -114,11 +117,10 @@ let empDailyHrsMap = new Map();
 
 function calcDailyWage(empHrs)
 {
-    return emp_Hrs* WAGE_PER_HOUR;
+    return emp_Hrs* Wage_Per_Hour;
 }
 
-while (totalEmpHrs <= MAX_HRS_IN_MONTH &&
-    totalWorkingDays < NUM_OF_WORKIGN_DAYS)
+while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKIGN_DAYS)
     {
     totalWorkingDays++;
     let empCheck = Math.floor(Math.random() * 10) % 3;
@@ -136,10 +138,11 @@ console.log("UC-6 : Total Days: " + totalWorkingDays + " Total Hrs: "+ totalEmpH
 //Using Array Helper Functions
 //UC 7A- CALC Total Wage Using Array "forEach method or reduce method"
 
-let totEmpWage = 0;
+let totalEmpWage = 0;
+let dailyWage =0;
 function sum(dailyWage) 
 {
-    totEmpWage += dailyWage;
+    totalEmpWage += dailyWage;
 }
 empDailyWageArr.forEach(sum);
 console.log("UC7A - Total Days: " + totalWorkingDays + " Total Hrs "+  totalEmpHrs + " Emp Wage " + EmpWage );
